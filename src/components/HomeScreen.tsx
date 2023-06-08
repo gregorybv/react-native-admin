@@ -13,7 +13,7 @@ export const HomeScreen: React.FC<ProfileScreenProps> = ({ navigation }) => {
     <View>
       <Text>Brokers Page</Text>
       <Button
-        title="Go to Profile"
+        title="Go to Home"
         onPress={() => navigation.navigate('Profile')}
       />
     </View>
