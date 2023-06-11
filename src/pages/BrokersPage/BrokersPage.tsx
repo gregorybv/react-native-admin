@@ -1,6 +1,8 @@
 import React from 'react';
-import { Text } from 'react-native';
+import {Text} from 'react-native';
 
 export const BrokersPage = () => {
-  return <Text>BrokersPage</Text>;
+
+    return <Text>BrokersPage</Text>;
+
 };
