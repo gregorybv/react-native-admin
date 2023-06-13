@@ -1,4 +1,5 @@
 ﻿import { UserManager, WebStorageStateStore } from 'oidc-client-ts';
+import window from "@react-navigation/native/lib/typescript/src/__mocks__/window";
 
 export const login = async () => {
   await userManager.signinRedirect();
