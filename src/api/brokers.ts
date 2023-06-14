@@ -1,9 +1,5 @@
 import {protectedFetch} from './api';
-import {
-    IBroker,
-    IBrokerCreateParameters,
-    IBrokerUpdateParameters,
-} from './brokers.interfaces'
+import {IBroker, IBrokerCreateParameters, IBrokerUpdateParameters,} from './brokers.interfaces'
 import {useMutation, useQuery, useQueryClient} from 'react-query';
 import {notification} from 'antd';
 
@@ -125,47 +121,39 @@ export const useBroker = (brokerId: number) => {
 };
 
 export const getBrokerById = async (brokerId: number): Promise<IBroker> => {
-    const response = await protectedFetch<IBroker>(`/admin/brokers/${brokerId}`);
-
-    return response;
+    return await protectedFetch<IBroker>(`/admin/brokers/${brokerId}`);
 };
 
 export const deactivateBrokerById = async (
     brokerId: number
 ): Promise<IBroker> => {
-    const response = await protectedFetch<IBroker>(
+    return await protectedFetch<IBroker>(
         `/admin/brokers/deactivate/${brokerId}`,
         {
             method: 'DELETE',
         }
     );
-
-    return response;
 };
 
 export const activateBrokerById = async (
     brokerId: number
 ): Promise<IBroker> => {
-    const response = await protectedFetch<IBroker>(
+    return await protectedFetch<IBroker>(
         `/admin/brokers/activate/${brokerId}`,
         {
             method: 'PATCH',
         }
     );
-
-    return response;
 };
 
 export const updateBrokerById = async (
     request: IBrokerUpdateParameters = {}
 ): Promise<IBroker> => {
-    const response = await protectedFetch<IBroker>(
+    return await protectedFetch<IBroker>(
         `/admin/brokers/${request.id}`,
         {
             method: 'PATCH',
             body: JSON.stringify(request),
         }
     );
-
-    return response;
 };
