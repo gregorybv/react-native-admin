@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, Button} from 'react-native';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {BrokersPage} from "../pages/BrokersPage/BrokersPage";
+import {Link} from "react-router-native";
 
 type RootStackParamList = {
     Profile: undefined;
@@ -14,8 +16,11 @@ export const HomeScreen: React.FC<ProfileScreenProps> = ({navigation}) => {
             <Text>Brokers Page</Text>
             <Button
                 title="Go to Home"
-                onPress={() => navigation.navigate('Profile')}
+                onPress={() => navigation.navigate<RootStackParamList, 'Profile'>}
             />
+            <Link to='/brokers'>
+                <BrokersPage/>
+            </Link>
         </View>
     );
 };
