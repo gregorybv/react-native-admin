@@ -16,6 +16,7 @@ export const protectedFetch = async <T>(
     const token = user.access_token;
     const res = await fetch(`${customApiUrl ?? API_URL}${path}`, {
         ...params,
+
         headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json',
