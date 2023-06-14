@@ -14,7 +14,7 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({navigation}) => {
             <Text>Broker Page</Text>
             <Button
                 title="Go to Home"
-                onPress={() => navigation.navigate('Profile')}
+                onPress={() => navigation.navigate<RootStackParamList, 'Profile'>}
             />
         </View>
     );
