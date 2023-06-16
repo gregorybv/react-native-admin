@@ -16,6 +16,9 @@ export const ProfileScreen: React.FC<ProfileScreenProps> = ({navigation}) => {
                 title="Go to Home"
                 onPress={() => navigation.navigate<RootStackParamList, 'Profile'>}
             />
+            <View>
+                <Text>Какой-то текст</Text>
+            </View>
         </View>
     );
 };
