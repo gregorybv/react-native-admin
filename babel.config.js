@@ -1,6 +1,19 @@
-module.exports = function(api) {
-  api.cache(true);
-  return {
-    presets: ['babel-preset-expo'],
-  };
+module.exports = function (api) {
+    api.cache(true);
+
+    return {
+        presets: ['module:metro-react-native-babel-preset'],
+        plugins: [
+            [
+                'module-resolver',
+                {
+                    root: ['./src'], // Замените './src' на фактический путь к вашему корневому каталогу проекта
+                    alias: {
+                        '@': './src', // Замените './src' на фактический путь к вашему корневому каталогу проекта
+                    },
+                },
+            ],
+        ],
+    };
 };
+
