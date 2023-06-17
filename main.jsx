@@ -1,7 +1,6 @@
 import React from 'react';
-import {View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {createRouter, RouterProvider} from 'react-router-dom';
+import {RouterProvider} from 'react-router-dom';
 import {QueryClient, QueryClientProvider} from 'react-query';
 import {ReactQueryDevtools} from 'react-query/devtools';
 import {ConfigProvider} from 'antd';
@@ -18,11 +17,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <ReactQueryDevtools initialIsOpen={false}/>
         <ConfigProvider>
             <NavigationContainer>
-                <RouterProvider router={createRouter(router)}>
-                    <View style={{flex: 1}}>
-                        {/* Your app components go here */}
-                    </View>
-                </RouterProvider>
+                {/*<RouterProvider router={createRouter(router)}>*/}
+                <RouterProvider router={router}/>
             </NavigationContainer>
         </ConfigProvider>
     </QueryClientProvider>
