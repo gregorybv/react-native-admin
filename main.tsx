@@ -8,16 +8,16 @@ import 'moment/locale/ru';
 
 import router from "./src/Router";
 import './styles/index.css';
-import * as ReactDOM from "expo/build/launch/createRoot.native";
+// @ts-ignore
+import * as ReactDOM from 'expo/build/launch/createRoot.native';
 
 const queryClient = new QueryClient();
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <QueryClientProvider client={queryClient}>
         <ReactQueryDevtools initialIsOpen={false}/>
         <ConfigProvider>
             <NavigationContainer>
-                {/*<RouterProvider router={createRouter(router)}>*/}
                 <RouterProvider router={router}/>
             </NavigationContainer>
         </ConfigProvider>
