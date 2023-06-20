@@ -1,11 +1,11 @@
 import {createBrowserRouter, RouteObject} from 'react-router-dom';
-import {CallbackPage} from './Callback';
+import {CallbackPage} from "@/pages/CallbackPage/CallbackPage";
 import {login, userManager} from '@/api/userManager';
 import React from 'react';
-import {HomePage} from '@/pages/HomePage';
-import {BrokersPage} from "@/pages/BrokersPage";
-import {BrokerPage} from '@/pages/BrokerPage';
-import {PageLayout} from '@/pages/PageLayout';
+import {HomePage} from "@/pages/HomePage/HomePage";
+import {BrokersPage} from "@/pages/BrokersPage/BrokersPage";
+import {BrokerPage} from "@/pages/BrokerPage/BrokerPage";
+import {PageLayout} from "@/pages/PageLayout/PageLayout";
 
 const authLoader = async () => {
     const user = await userManager.getUser();
