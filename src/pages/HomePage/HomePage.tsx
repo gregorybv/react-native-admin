@@ -1,18 +1,18 @@
 import React from 'react';
 import {Text, View, TouchableOpacity, Image} from 'react-native';
-import {useNavigation, NavigationProp, RouteProp} from '@react-navigation/native';
-import {StackNavigationOptions} from "@react-navigation/stack";
+import {NavigationProp, RouteProp} from '@react-navigation/native';
 import {RootStackParamList} from "../../types";
+import {StackNavigationOptions} from "@react-navigation/stack";
 
 type HomePageRouteProp = RouteProp<RootStackParamList, 'Home'>;
 type HomePageNavigationProp = NavigationProp<RootStackParamList, 'Home'>;
 
-export type HomePageProps = {
+type HomePageProps = {
     route: HomePageRouteProp;
     navigation: HomePageNavigationProp;
 };
 
-export const HomePage: React.FC<HomePageProps> = ({route, navigation}) => {
+const HomePage: React.FC<HomePageProps> = ({route, navigation}) => {
     const handleButtonPress = () => {
         navigation.navigate('BrokersPage');
     };
@@ -27,7 +27,7 @@ export const HomePage: React.FC<HomePageProps> = ({route, navigation}) => {
     );
 };
 
-export const HomeScreenOptions: StackNavigationOptions = {
+const HomeScreenOptions: StackNavigationOptions = {
     headerTitle: () => (
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Image source={require('../../assets/image/logo.svg')} style={{width: 24, height: 24, marginRight: 8}}/>
@@ -36,4 +36,4 @@ export const HomeScreenOptions: StackNavigationOptions = {
     ),
 };
 
-// export default {HomePage, HomeScreenOptions};
+export {HomePage, HomeScreenOptions};
