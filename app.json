@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "PP",
-    "slug": "PP",
+    "name": "react-native-admin",
+    "slug": "react-native-admin",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
