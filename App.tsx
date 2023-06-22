@@ -9,25 +9,30 @@ import BrokerPage from './src/pages/BrokerPage/BrokerPage';
 
 const Stack = createStackNavigator<RootStackParamList>();
 
-export default function App() {
+function App() {
     return (
         <NavigationContainer>
-            <Stack.Navigator>
-                <Stack.Screen name='Домашняя страница' component={HomePage}/>
-                <Stack.Screen name='Страница брокеров' component={BrokersPage}/>
-                <Stack.Screen name='Страница брокера' component={BrokerPage}/>
+            <Stack.Navigator
+                screenOptions={{
+                    headerStyle: styles.header,
+                    headerTitleStyle: styles.headerTitle,
+                }}
+            >
+                <Stack.Screen name="Домашняя страница" component={HomePage}/>
+                <Stack.Screen name="Брокеры" component={BrokersPage}/>
+                <Stack.Screen name="Страница брокера" component={BrokerPage}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+    header: {
+        backgroundColor: '#333',
+    },
+    headerTitle: {
+        color: 'white',
     },
 });
 
-
+export default App;
