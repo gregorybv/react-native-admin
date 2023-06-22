@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, Image, StyleSheet, ImageBackground} from "react-native";
+import {Text, View, StyleSheet, ImageBackground} from "react-native";
 
 const image = {uri: 'https://legacy.reactjs.org/logo-og.png'};
 
