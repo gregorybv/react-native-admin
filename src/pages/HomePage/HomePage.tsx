@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, TouchableOpacity, Image, Button} from 'react-native';
+import {Text, View, TouchableOpacity, Button} from 'react-native';
 import {NavigationProp, RouteProp} from '@react-navigation/native';
 import {RootStackParamList} from "../../types";
 
@@ -12,14 +12,14 @@ type HomePageProps = {
 };
 const HomePage: React.FC<HomePageProps> = ({route, navigation}) => {
     const handleButtonPress = () => {
-        navigation.navigate('BrokersPage');
+        navigation.navigate('Страница брокеров');
     };
 
     return (
         <View>
             {/*<Text>Домашняя страница</Text>*/}
             <TouchableOpacity onPress={handleButtonPress}>
-                <Button onPress={handleButtonPress} title={'Перейти на вторую страницу'}></Button>
+                <Button onPress={handleButtonPress} title={'Перейти на страницу брокеров'}></Button>
             </TouchableOpacity>
         </View>
     );
