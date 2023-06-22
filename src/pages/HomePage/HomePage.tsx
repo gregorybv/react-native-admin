@@ -1,17 +1,15 @@
 import React from 'react';
-import {Text, View, TouchableOpacity, Image} from 'react-native';
+import {Text, View, TouchableOpacity, Image, Button} from 'react-native';
 import {NavigationProp, RouteProp} from '@react-navigation/native';
 import {RootStackParamList} from "../../types";
-import {StackNavigationOptions} from "@react-navigation/stack";
 
-type HomePageRouteProp = RouteProp<RootStackParamList, 'Home'>;
-type HomePageNavigationProp = NavigationProp<RootStackParamList, 'Home'>;
+type HomePageRouteProp = RouteProp<RootStackParamList, 'Домашняя страница'>;
+type HomePageNavigationProp = NavigationProp<RootStackParamList, 'Домашняя страница'>;
 
 type HomePageProps = {
     route: HomePageRouteProp;
     navigation: HomePageNavigationProp;
 };
-
 const HomePage: React.FC<HomePageProps> = ({route, navigation}) => {
     const handleButtonPress = () => {
         navigation.navigate('BrokersPage');
@@ -19,21 +17,14 @@ const HomePage: React.FC<HomePageProps> = ({route, navigation}) => {
 
     return (
         <View>
-            <Text>HomePage</Text>
+            {/*<Text>Домашняя страница</Text>*/}
             <TouchableOpacity onPress={handleButtonPress}>
-                <Text>Перейти на вторую страницу</Text>
+                <Button onPress={handleButtonPress} title={'Перейти на вторую страницу'}></Button>
             </TouchableOpacity>
         </View>
     );
 };
 
-const HomeScreenOptions: StackNavigationOptions = {
-    headerTitle: () => (
-        <View style={{flexDirection: 'row', alignItems: 'center'}}>
-            <Image source={require('../../assets/image/logo.svg')} style={{width: 24, height: 24, marginRight: 8}}/>
-            <Text>Домашняя страница</Text>
-        </View>
-    ),
-};
+export default HomePage
 
-export {HomePage, HomeScreenOptions};
+
