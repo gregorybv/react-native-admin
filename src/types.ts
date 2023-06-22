@@ -1,5 +1,5 @@
 export type RootStackParamList = {
-    Home: undefined;
+    'Домашняя страница': undefined;
     BrokersPage: undefined;
     BrokerPage: undefined;
 };
