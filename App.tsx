@@ -14,8 +14,8 @@ export default function App() {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen name='Домашняя страница' component={HomePage}/>
-                <Stack.Screen name='BrokersPage' component={BrokersPage}/>
-                <Stack.Screen name='BrokerPage' component={BrokerPage}/>
+                <Stack.Screen name='Страница брокеров' component={BrokersPage}/>
+                <Stack.Screen name='Страница брокера' component={BrokerPage}/>
             </Stack.Navigator>
         </NavigationContainer>
     );
