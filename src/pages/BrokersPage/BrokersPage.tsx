@@ -1,29 +1,29 @@
 import React from 'react';
-import {View, TouchableOpacity, Button, Text, FlatList, StyleSheet} from 'react-native';
+import {View, TouchableOpacity} from 'react-native';
+import {DataTable} from 'react-native-paper';
 
 interface ITableData {
     id: number;
     firstName: string;
     lastName: string;
-    email: string | number
+    email: string | number;
 }
 
 const Row: React.FC<ITableData> = ({firstName, lastName, email}) => (
-    <View style={styles.row}>
-        <Text style={styles.cell}>{firstName}</Text>
-        <Text style={styles.cell}>{lastName}</Text>
-        <Text style={styles.cell}>{email}</Text>
-    </View>
+    <DataTable.Row>
+        <DataTable.Cell>{firstName}</DataTable.Cell>
+        <DataTable.Cell>{lastName}</DataTable.Cell>
+        <DataTable.Cell>{email}</DataTable.Cell>
+    </DataTable.Row>
 );
 
 const Header = () => (
-    <View style={styles.row}>
-        <Text style={styles.header}>First Name</Text>
-        <Text style={styles.header}>Last Name</Text>
-        <Text style={styles.header}>Email</Text>
-    </View>
+    <DataTable.Header>
+        <DataTable.Title>Название</DataTable.Title>
+        <DataTable.Title>Логин</DataTable.Title>
+        <DataTable.Title>Email</DataTable.Title>
+    </DataTable.Header>
 );
-
 
 interface BrokersPageProps {
     navigation: any;
@@ -47,37 +47,16 @@ const BrokersPage: React.FC<BrokersPageProps> = ({navigation}) => {
 
     return (
         <View>
-
-            <FlatList
-                data={tableData}
-                keyExtractor={(item, index) => index.toString()}
-                renderItem={({item}) => (
-                    <TouchableOpacity onPress={() => handleUserPress(item)}>
+            <DataTable>
+                <Header/>
+                {tableData.map((item) => (
+                    <TouchableOpacity key={item.id} onPress={() => handleUserPress(item)}>
                         <Row {...item} />
                     </TouchableOpacity>
-                )}
-                ListHeaderComponent={Header}
-            />
+                ))}
+            </DataTable>
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    row: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingHorizontal: 16,
-        paddingVertical: 8,
-        borderBottomWidth: 1,
-        borderBottomColor: '#ccc',
-    },
-    cell: {
-        flex: 1,
-    },
-    header: {
-        fontWeight: 'bold',
-        flex: 1,
-    },
-});
 
 export default BrokersPage;

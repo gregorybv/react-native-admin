@@ -10,8 +10,8 @@ const BrokerPage: React.FC<IBrokerPageProps> = ({route}) => {
 
     return (
         <View>
-            <Text>First Name: {firstName}</Text>
-            <Text>Last Name: {lastName}</Text>
+            <Text>Название: {firstName}</Text>
+            <Text>Логин: {lastName}</Text>
             <Text>Email: {email}</Text>
         </View>
     );
