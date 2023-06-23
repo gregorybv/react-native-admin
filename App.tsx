@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {RootStackParamList} from './src/types';
@@ -11,6 +11,7 @@ const Stack = createStackNavigator<RootStackParamList>();
 
 function App() {
     return (
+
         <NavigationContainer>
             <Stack.Navigator
                 screenOptions={{
@@ -18,15 +19,19 @@ function App() {
                     headerTitleStyle: styles.headerTitle,
                 }}
             >
-                <Stack.Screen name="Домашняя страница" component={HomePage}/>
-                <Stack.Screen name="Брокеры" component={BrokersPage}/>
-                <Stack.Screen name="Страница брокера" component={BrokerPage}/>
+                    <Stack.Screen name="Домашняя страница" component={HomePage}/>
+                    <Stack.Screen name="Брокеры" component={BrokersPage}/>
+                    <Stack.Screen name="Страница брокера" component={BrokerPage}/>
             </Stack.Navigator>
         </NavigationContainer>
+
     );
 }
 
 const styles = StyleSheet.create({
+    container: {
+        backgroundColor: '#B8FCD8'
+    },
     header: {
         backgroundColor: '#333',
     },
