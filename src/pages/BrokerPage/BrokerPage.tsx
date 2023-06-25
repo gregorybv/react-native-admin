@@ -1,9 +1,6 @@
 import React from 'react';
 import {View, Text} from 'react-native';
-
-interface IBrokerPageProps {
-    route: any;
-}
+import {IBrokerPageProps} from "../../models/IBrokerPage";
 
 const BrokerPage: React.FC<IBrokerPageProps> = ({route}) => {
     const {firstName, lastName, email} = route.params;
