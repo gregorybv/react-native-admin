@@ -1,13 +1,7 @@
 import React from 'react';
 import {View, TouchableOpacity} from 'react-native';
 import {DataTable} from 'react-native-paper';
-
-interface ITableData {
-    id: number;
-    firstName: string;
-    lastName: string;
-    email: string | number;
-}
+import {ITableData} from "../../models/IDataTable";
 
 const Row: React.FC<ITableData> = ({firstName, lastName, email}) => (
     <DataTable.Row>
