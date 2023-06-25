@@ -1,6 +1,4 @@
 
-P
- src/components/ProfileScreen.tsx,e\2\e20b32ca99179ac8f5279d8e1481cfbe4ffe143b
 S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 ]
